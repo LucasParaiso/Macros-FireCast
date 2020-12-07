@@ -1,0 +1,1 @@
+rolar("1d20" .. sheet.atributos.moddestrezastr, "Destreza");
