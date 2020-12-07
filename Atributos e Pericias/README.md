@@ -14,3 +14,7 @@ Irá abrir outra tela para escolher qual atributo exatamente você quer rolar, d
 # 3. Perícias (player)
 
 Irá abrir outra tela para escolher qual Perícia exatamente você quer rolar, depois a macro pega o valor da sua ficha e rola automaticamento no chat.
+
+# Duas pastas
+
+você pode utilizar qualquer uma das duas pastas para utilizar as macros, a primeira fiz usando funções, então ela ficou em um comando só, "/comandos" e a segunda eu dividi em diversos arquivos e utilizei o método "invoke(nome da macro)" para uni-las, mas digitando "/comandos" irá funcionar do mesmo jeito que a primeira.
