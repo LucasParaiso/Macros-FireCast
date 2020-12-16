@@ -1,9 +1,0 @@
-local indice, texto = choose("Escolha um Atributo:", {"NPC", "Atributos", "Pericias", "Gerar Lag", "Rolar dado discreto", "Apresentação"}, 1);
-
-if indice == 1 then modificador = invoke("NPC");
-elseif indice == 2 then modificador = invoke("atributosPlayer");
-elseif indice == 3 then modificador = invoke("periciasPlayer");
-elseif indice == 4 then modificador = invoke("lag");
-elseif indice == 5 then modificador = invoke("discreta");
-elseif indice == 6 then modificador = invoke("apresentacao");
-end;

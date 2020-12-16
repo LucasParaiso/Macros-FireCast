@@ -1,0 +1,11 @@
+local escolha, qualquer = choose("Escolha:", {"Atributos", "Pericias"}, 1);
+
+if escolha == 1 then
+    invoke("atributosNPC");
+else
+    if escolha == 2 then
+        invoke("periciasNPC");
+    end;
+end;
+
+

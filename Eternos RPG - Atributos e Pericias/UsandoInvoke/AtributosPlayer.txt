@@ -1,0 +1,18 @@
+local indice, a = choose("Escolha um Atributo:", {"Força", "Destreza", "Constinuição", "Inteligência", "Sabedoria", "Carisma", "Iniciativa"}, 1);
+
+local modificador;
+
+if indice == 1 then modificador = tonumber(sheet.iniciativa);
+    elseif indice == 2 then modificador = sheet.atributos.moddestreza;
+    elseif indice == 3 then modificador = sheet.atributos.modconstituicao;
+    elseif indice == 4 then modificador = sheet.atributos.modinteligencia;
+    elseif indice == 5 then modificador = sheet.atributos.modsabedoria;
+    elseif indice == 6 then modificador = sheet.atributos.modcarisma;
+    elseif indice == 7 then modificador = sheet.atributos.modforca;
+    end;
+
+if modificador < 0 then
+    rolar("1d20" .. modificador, a);
+else
+    rolar("1d20+" .. modificador, a);    
+end;

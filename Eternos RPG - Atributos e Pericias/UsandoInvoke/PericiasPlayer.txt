@@ -1,0 +1,33 @@
+local indice, a = choose("Escolha uma pericia:", {"Atletismo","Acrobacia","Furtividade","Prestidigitação","Arcanismo","História","Investigação","Natureza","Religião","Adestrar Animais","Intuição","Medicina","Percepção","Sobrevivência","Atuação","Enganação","Intimidação", "Persuasão"}, 1);
+
+local modificador;
+local rolagem;
+local dado;
+local dados;
+local mensagem;
+
+if indice == 1 then modificador = sheet.pericias.bonusatletismo;
+elseif indice == 2 then modificador = sheet.pericias.bonusacrobacia;
+elseif indice == 3 then modificador = sheet.pericias.bonusfurtividade;
+elseif indice == 4 then modificador = sheet.pericias.bonusprestidigitacao;
+elseif indice == 5 then modificador = sheet.pericias.bonusarcanismo;
+elseif indice == 6 then modificador = sheet.pericias.bonushistoria;
+elseif indice == 7 then modificador = sheet.pericias.bonusinvestigacao;
+elseif indice == 8 then modificador = sheet.pericias.bonusnatureza;
+elseif indice == 9 then modificador = sheet.pericias.bonusreligiao;
+elseif indice == 10 then modificador = sheet.pericias.bonusadestrarAnimais;
+elseif indice == 11 then modificador = sheet.pericias.bonusintuicao;
+elseif indice == 12 then modificador = sheet.pericias.bonusmedicina;
+elseif indice == 13 then modificador = sheet.pericias.bonuspercepcao;
+elseif indice == 14 then modificador = sheet.pericias.bonussobrevivencia;
+elseif indice == 15 then modificador = sheet.pericias.bonusAauacao;
+elseif indice == 16 then modificador = sheet.sheet.pericias.bonusenganacao;
+elseif indice == 17 then modificador = sheet.pericias.bonusintimidacao;
+elseif indice == 18 then modificador = sheet.pericias.bonuspersuasao;
+end;
+
+if modificador < 0 then
+    rolar("1d20" .. modificador, a);
+else
+    rolar("1d20+" .. modificador, a);    
+end;

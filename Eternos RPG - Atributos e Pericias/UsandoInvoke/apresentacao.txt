@@ -1,0 +1,6 @@
+local personagem = myCharacter.nome
+
+send("===========================");
+send("Olá! Me chamo:"); 
+send(personagem);
+send("===========================");

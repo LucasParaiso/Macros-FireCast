@@ -1,0 +1,43 @@
+    local indice, a = choose("Escolha um Atributo:", {"Iniciativa", "Destreza", "Constinuição", "Inteligência", "Sabedoria", "Carisma", "Força"}, 1);
+
+    local modificador, rolagem, dado, dados, mensagem;
+
+    local discreta = confirmYesNo("Deseja rolar de forma Discreta?");
+
+    local personagens = chooseCharacters("Escolha um NPC", "npc");
+
+    for i = 1, #personagens, 1 do
+        dados = getCharacterSheet(personagens[i]);
+
+        if indice == 1 then modificador = tonumber(dados.iniciativa);
+        elseif indice == 2 then modificador = dados.atributos.moddestreza;
+        elseif indice == 3 then modificador = dados.atributos.modconstituicao;
+        elseif indice == 4 then modificador = dados.atributos.modinteligencia;
+        elseif indice == 5 then modificador = dados.atributos.modsabedoria;
+        elseif indice == 6 then modificador = dados.atributos.modcarisma;
+        elseif indice == 7 then modificador = dados.atributos.modforca;
+        end;
+
+    if modificador < 0 then
+        rolagem  = rolarLocal("1d20" .. modificador);
+
+        modificador = modificador * (-1);
+
+        dado = rolagem + modificador;
+
+        mensagem = ("1d20 - " .. modificador .. " = " .. rolagem .. " {[" .. dado .. "] - " .. modificador .. "} - " .. a);
+    else
+        rolagem = rolarLocal("1d20+" .. modificador);
+
+        dado = rolagem - modificador;
+
+        mensagem = ("1d20 + " .. modificador .. " = " .. rolagem .. " {[" .. dado .. "] + " .. modificador .. "} - " .. a);
+    end;
+
+    if (discreta) then
+        showMessage(personagens[i].nome .. ": " .. mensagem);
+    else
+        sendNPC(personagens[i].nome, mensagem);
+    end;
+
+    end;
